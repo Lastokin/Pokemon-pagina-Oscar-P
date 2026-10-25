@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adivina el Pokemon</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div id="floating-container"></div>
+
+    <header class="top-bar">
+        <div class="top-bar-left">
+            <div class="badge-pill streak-counter">
+                Racha: <strong id="streak-count">0</strong>
+            </div>
+            <div class="badge-pill" id="difficulty-badge">
+                Dificultad Facil
+            </div>
+            <button id="audio-toggle-btn" class="btn-text">Sonido</button>
+            <button id="reset-stats-btn" class="btn-text">Reiniciar</button>
+        </div>
+
+        <div class="top-bar-right">
+            <div class="badge-pill coin-counter">
+                Pokedolares: <strong id="coins-count">0</strong>
+            </div>
+        </div>
+    </header>
+
+    <div class="header-section">
+        <h1>Adivina el Pokemon</h1>
+        <p class="subtitle">Adivina el Pokemon con sus caracteristicas y elige la opcion correcta</p>
+    </div>
+
+    <section class="pokemon-visual-card">
+        <span id="pokedex-tag" class="pokedex-tag">Numero</span>
+        <div class="image-container">
+            <img id="pokemon-img" class="pokemon-img silhouette"
+                 src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png"
+                 alt="Pokemon">
+            <div id="image-loader" class="image-loader hidden">
+                <div class="pokeball-mini-spinner"></div>
+                <span>Cargando</span>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Caracteristicas del Pokemon</h2>
+        <div class="clues-container">
+            <ul class="clues-list">
+                <li id="clue-item-type">
+                    <span class="clue-label">Tipo:</span>
+                    <span id="clue-types" class="types-wrapper">
+                        <span class="type-badge" style="background-color: #F7D02C;">Electrico</span>
+                    </span>
+                </li>
+                <li id="clue-item-height">
+                    <span class="clue-label">Altura:</span>
+                    <span id="clue-height">0.4 m</span>
+                </li>
+                <li id="clue-item-weight">
+                    <span class="clue-label">Peso:</span>
+                    <span id="clue-weight">6.0 kg</span>
+                </li>
+                <li id="clue-item-ability">
+                    <span class="clue-label">Habilidad:</span>
+                    <span id="clue-abilities">Electricidad Estatica</span>
+                </li>
+            </ul>
+
+            <div class="pokedex-entry-box">
+                <strong>Registro Pokedex:</strong>
+                <span id="clue-description">Cuando se enfada descarga energia de sus mejillas</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="options-section">
+        <h2>Opciones</h2>
+        <div id="options-container" class="options-grid">
+            <button id="btn-option-0" class="btn-pokemon" type="button" data-index="0">Pikachu</button>
+            <button id="btn-option-1" class="btn-pokemon" type="button" data-index="1">Charmander</button>
+            <button id="btn-option-2" class="btn-pokemon" type="button" data-index="2">Bulbasaur</button>
+            <button id="btn-option-3" class="btn-pokemon" type="button" data-index="3">Squirtle</button>
+        </div>
+    </section>
+
+    <div id="result-banner" class="result-banner">
+        <div id="result-text"></div>
+        <div class="result-actions">
+            <button id="btn-next" class="btn-next" type="button">Siguiente</button>
+            <span id="timer-text" class="timer-indicator"></span>
+        </div>
+    </div>
+
+    <footer>
+            <p>Datos de PokeAPI</p>
+        </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
